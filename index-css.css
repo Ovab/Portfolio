@@ -1,0 +1,28 @@
+html{
+    background-color: darkslategray;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    border: 5px solid green;
+    padding: 10px;
+}
+.center-right{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid green;
+    padding: 10px;
+    left: 96%;
+}
+.center-left{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid green;
+    padding: 10px;
+    left: 4%;
+}

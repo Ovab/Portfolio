@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c3f3d2f-01ca-4d27-b713-8b35d5f34ee1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../bin/apache/apache2.4.46/logs/httpd.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/BavoLaptop.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/aria_log.00000001" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/aria_log.00000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/aria_log_control" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/aria_log_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mariadb/mariadb10.4.13/data/ibtmp1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/BavoLaptop.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/ibtmp1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/innodb_index_stats.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/innodb_table_stats.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/user.MYD" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/user.MYD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/user.MYI" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/mysql/user.MYI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/school/student.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/mysql/mysql5.7.31/data/school/student.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bin/php/php7.3.21/phpForApache.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../bin/php/php7.3.21/phpForApache.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/apache_error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/apache_error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/mariadb.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/mariadb.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/mysql.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/mysql.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logs/php_error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../logs/php_error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../wampmanager.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../wampmanager.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../wampmanager.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../wampmanager.ini" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1up5pBTqhKEfN4EtvEymaKTzpXP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c3f3d2f-01ca-4d27-b713-8b35d5f34ee1" name="Default Changelist" comment="" />
+      <created>1625349871144</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625349871144</updated>
+      <workItem from="1625349876757" duration="4689000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col justify-center items-center h-max bg-main">
-    <h1 class="text-white text-9xl mb-10 textStroke">Bavo Knol</h1>
+  <div class="flex flex-col justify-center items-center h-max bg-gray-800">
+    <h1 class="text-white text-9xl mb-10 underline-offset-8 decoration-8 underline">Bavo Knol</h1>
     <div class="text-white text-6xl mb-10">
       <h2>Full stack developer</h2>
     </div>

@@ -10,7 +10,7 @@ export default {
     data() {
         return {
             timeoutBetweenTexts: 2000,
-            typeWriterSpeed: 100,
+            typeWriterSpeed: 80,
             keepLetters: 0,
             addedLetters: 0,
             iteration: 0,

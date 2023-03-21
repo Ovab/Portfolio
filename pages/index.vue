@@ -1,18 +1,26 @@
 <template>
-    <section class="flex flex-col justify-center items-center h-max bg-gray-800 h-screen">
-        <h1 class="text-white text-9xl mb-10 underline-offset-8 decoration-8 underline">Bavo Knol</h1>
+    <section class="flex flex-col justify-center items-center h-max bg-gray-800 h-screen px-2 sm:mx-0">
+        <h1 class="text-white text-9xl mb-10 underline underline-offset-8 decoration-8">Bavo Knol</h1>
         <typewriterSubHeadText/>
     </section>
 
-    <!--TODO: rewrite more dynamic with an object containing arrays with the relevant data like in the projects variable -->
-    <projects/>
+    <section class="bg-gray-800 h-screen px-5">
+        <h2 class="flex justify-center text-white text-7xl mb-10 underline-offset-8 decoration-8">Projects</h2>
+        <projects/>
+    </section>
+
+    <!--Make git like timeline  -->
+    <section class="bg-gray-800 h-screen px-5">
+        <h2 class="flex justify-center text-white text-7xl mb-10 underline-offset-8 decoration-8">Software/IT Jobs</h2>
+        <jobs/>
+    </section>
 </template>
 
 <script>
 export default {
     name: "index",
-    data(){
-        return{
+    data() {
+        return {
             inMove: false,
             inMoveDelay: 400,
             activeSection: 0,
@@ -30,7 +38,7 @@ export default {
             let sections = document.getElementsByTagName('section');
             let length = sections.length;
 
-            for(let i = 0; i < length; i++) {
+            for (let i = 0; i < length; i++) {
                 let sectionOffset = sections[i].offsetTop;
                 this.offsets.push(sectionOffset);
             }
@@ -38,7 +46,7 @@ export default {
         /**
          * Handle the 'mousewheel' event for other browsers
          */
-        handleMouseWheel: function(e) {
+        handleMouseWheel: function (e) {
 
             if (e.wheelDelta < 30 && !this.inMove) {
                 this.moveUp();
@@ -52,7 +60,7 @@ export default {
         /**
          * Handle the 'DOMMouseScroll' event for Firefox
          */
-        handleMouseWheelDOM: function(e) {
+        handleMouseWheelDOM: function (e) {
 
             if (e.detail > 0 && !this.inMove) {
                 this.moveUp();
@@ -69,7 +77,7 @@ export default {
             this.inMove = true;
             this.activeSection--;
 
-            if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
+            if (this.activeSection < 0) this.activeSection = this.offsets.length - 1;
 
             this.scrollToSection(this.activeSection, true);
         },
@@ -80,7 +88,7 @@ export default {
             this.inMove = true;
             this.activeSection++;
 
-            if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
+            if (this.activeSection > this.offsets.length - 1) this.activeSection = 0;
 
             this.scrollToSection(this.activeSection, true);
         },
@@ -88,14 +96,14 @@ export default {
          * Scrolls to the passed section id if the section exists and the delay is over
          */
         scrollToSection(id, force = false) {
-            if(this.inMove && !force) return false;
+            if (this.inMove && !force) return false;
 
             this.activeSection = id;
             this.inMove = true;
 
             // get section and scroll into view if it exists
             let section = document.getElementsByTagName('section')[id];
-            if(section) {
+            if (section) {
                 document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
             }
 
@@ -116,12 +124,12 @@ export default {
          * Handles the 'touchmove' event on mobile devices
          */
         touchMove(e) {
-            if(this.inMove) return false;
+            if (this.inMove) return false;
             e.preventDefault();
 
             const currentY = e.touches[0].clientY;
 
-            if(this.touchStartY < currentY) {
+            if (this.touchStartY < currentY) {
                 this.moveDown();
             } else {
                 this.moveUp();
@@ -138,17 +146,17 @@ export default {
         this.calculateSectionOffsets();
 
         window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
-        window.addEventListener('mousewheel', this.handleMouseWheel, { passive: false }); // Other browsers
+        window.addEventListener('mousewheel', this.handleMouseWheel, {passive: false}); // Other browsers
 
-        window.addEventListener('touchstart', this.touchStart, { passive: false }); // mobile devices
-        window.addEventListener('touchmove', this.touchMove, { passive: false }); // mobile devices
+        window.addEventListener('touchstart', this.touchStart, {passive: false}); // mobile devices
+        window.addEventListener('touchmove', this.touchMove, {passive: false}); // mobile devices
     },
     /**
      * destroyed() hook executes on page destroy and removes all registered event listeners
      */
     destroyed() {
         window.removeEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // Mozilla Firefox
-        window.removeEventListener('mousewheel', this.handleMouseWheel, { passive: false });  // Other browsers
+        window.removeEventListener('mousewheel', this.handleMouseWheel, {passive: false});  // Other browsers
 
         window.removeEventListener('touchstart', this.touchStart); // mobile devices
         window.removeEventListener('touchmove', this.touchMove); // mobile devices

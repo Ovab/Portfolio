@@ -1,25 +1,28 @@
 <template>
-    <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-3 gap-2 text-white">
-        <template v-for="project in projects">
-            <div class="flex flex-col w-full px-2 rounded"
-                 :style="{'background-color': project.bgColor}">
-                <div class="flex flex-col flex-1">
-                    <div class="flex justify-center">
-                        <h3 class="text-2xl">{{ project.title }}</h3>
-                    </div>
-                    <p class="mt-2">
-                        {{ project.description }}
-                    </p>
-                </div>
-                <div class="flex justify-between flex-col sm:flex-row"
-                     :class="{'!flex-col':project.tags.length > 5}">
-                    <div class="my-3 flex flex-row flex-wrap gap-2 noScrollbar">
-                        <LanguageTag v-for="tag in matchProjectAndTags(project)" :tag="tag.name"
-                                     :tag-color="tag.color"/>
-                    </div>
-                    <span class="flex flex-row gap-2 mb-2">
+    <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-3 gap-2 text-white"
+         :class="{'grid-cols-2':projects.length >= 4}">
+        <client-only>
+            <template v-for="(project, index) in projects">
+                <template v-if="index <= 4 && this.screenWidth <= 1024">
+                    <div class="flex flex-col w-full px-2 rounded"
+                         :style="{'background-color': project.bgColor}">
+                        <div class="flex flex-col flex-1">
+                            <div class="flex justify-center">
+                                <h3 class="text-2xl">{{ project.title }}</h3>
+                            </div>
+                            <p class="mt-2">
+                                {{ project.description }}
+                            </p>
+                        </div>
+                        <div class="flex justify-between flex-col sm:flex-row"
+                             :class="{'!flex-col':project.tags.length > 5}">
+                            <div class="my-3 flex flex-row flex-wrap gap-2 noScrollbar">
+                                <LanguageTag v-for="tag in matchProjectAndTags(project)" :tag="tag.name"
+                                             :tag-color="tag.color"/>
+                            </div>
+                            <span class="flex flex-row gap-2 mb-2">
                         <nuxt-link v-if="project.github" :to="'https://github.com/'+project.github" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor"
                                  class="bi bi-github"
                                  viewBox="0 0 16 16">
                                 <path
@@ -27,7 +30,7 @@
                             </svg>
                         </nuxt-link>
                         <nuxt-link v-if="project.website" :to="project.website" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor"
                                  class="bi bi-globe"
                                  viewBox="0 0 16 16">
                                 <path
@@ -35,9 +38,11 @@
                             </svg>
                         </nuxt-link>
                     </span>
-                </div>
-            </div>
-        </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </client-only>
     </div>
 </template>
 
@@ -46,6 +51,7 @@ export default {
     name: "Projects",
     data() {
         return {
+            screenWidth: 0,
             projects: [
                 {
                     title: "This very website :)",
@@ -71,14 +77,14 @@ export default {
                     website: null,
                     bgColor: "#34373e"
                 },
-/*                {
+                {
                     title: "Steam API project [WIP]",
                     description: "I'm currently working on a site that combines a bunch of data from the Steam API into a nice looking site",
                     tags: ['Nuxt.js', 'TailwindCSS', 'Node.js', 'MongoDB'],
                     github: null,
                     website: null,
                     bgColor: "#353c4c"
-                },*/
+                },
             ],
             tags: [
                 {
@@ -131,6 +137,9 @@ export default {
             return matchedTags;
         }
     },
+    mounted() {
+        this.screenWidth = window.innerWidth;
+    }
 }
 </script>
 

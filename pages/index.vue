@@ -47,7 +47,6 @@ export default {
          * Handle the 'mousewheel' event for other browsers
          */
         handleMouseWheel: function (e) {
-
             if (e.wheelDelta < 30 && !this.inMove) {
                 this.moveUp();
             } else if (e.wheelDelta > 30 && !this.inMove) {
@@ -92,6 +91,7 @@ export default {
 
             this.scrollToSection(this.activeSection, true);
         },
+
         /**
          * Scrolls to the passed section id if the section exists and the delay is over
          */

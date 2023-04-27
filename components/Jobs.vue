@@ -1,15 +1,24 @@
 <template>
     <div class="text-white text-3xl">
         Fancy git timeline or something is supposed to go here if I decide to work on this again
-        <!-- loop though the sorted jobs        -->
-        <div v-for="job in jobs">
-            {{job}}
+        <div class="grid grid-cols-auto grid-rows-2 gap-2 text-white" v-for="job in jobs">
+            <WorksItem :work="job"/>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    props: {
+        displayCorrectly: {
+            type: Function,
+            required: true
+        },
+        dataType: {
+            type: String,
+            required: true,
+        },
+    },
     data() {
         return {
             jobs: [
@@ -17,76 +26,24 @@ export default {
                     title: "Software Developer",
                     company: "Jaspers Media",
                     location: "The Netherlands",
-                    description: "I'm currently working on a site that combines a bunch of data from the Steam API into a nice looking site",
+                    description: "I started here as an intern and worked my way up to a full-time employee. " +
+                        "I worked on of websites the <a class='underline' href='luier.nl'> Luier.nl </a>  and <a class='underline' href='flap.nl'>Flap.nl</a> as full stack developer. " +
+                        "having had my hand in almost every bit of code on those websites",
                     tags: ['Nuxt.js', 'TailwindCSS', 'Node.js', 'MongoDB'],
                     github: null,
-                    website: null,
+                    website: 'https://jaspersmedia.com/',
+                    bgColor: "#353c4c",
                     from: "2020-01-01",
-                    to: null
-                },
-                {
-                    title: "Software Developer",
-                    company: "Jaspers Media",
-                    location: "The Netherlands",
-                    description: "I'm currently working on a site that combines a bunch of data from the Steam API into a nice looking site",
-                    tags: ['Nuxt.js', 'TailwindCSS', 'Node.js', 'MongoDB'],
-                    github: null,
-                    website: null,
-                    from: "2020-02-01",
-                    to: null
+                    to: "2021-09-01"
                 }
-            ],
-            tags: [
-                {
-                    name: "Nuxt.js",
-                    color: "#00c58e"
-                },
-                {
-                    name: "TailwindCSS",
-                    color: "#38b2ac"
-                },
-                {
-                    name: "Larvel",
-                    color: "#f56565"
-                },
-                {
-                    name: "Node.js",
-                    color: "#68d391"
-                },
-                {
-                    name: "MongoDB",
-                    color: "#067843"
-                },
-                {
-                    name: "JavaScript",
-                    color: "#f6e05e"
-                },
-                {
-                    name: "Java",
-                    color: "#d66d0f"
-                },
-                {
-                    name: "Greenfoot",
-                    color: "#93c75e"
-                },
             ],
         }
     },
-    methods: {
-        matchProjectAndTags(projectUpper) {
-            // check if the tag of the project is in the tags array, if so add it to another array and return that array
-            let matchedTags = [];
-            if (projectUpper.tags === undefined) return matchedTags;
-            projectUpper.tags.forEach(tag => {
-                this.tags.forEach(tag2 => {
-                    if (tag === tag2.name) {
-                        matchedTags.push(tag2)
-                    }
-                })
-            })
-            return matchedTags;
-        }
-    }
+    computed: {
+        jobs() {
+            return this.displayCorrectly(this.jobs, true);
+        },
+    },
 }
 </script>
 

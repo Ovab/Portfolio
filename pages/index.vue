@@ -6,13 +6,12 @@
 
     <section class="bg-gray-800 h-screen px-5">
         <h2 class="flex justify-center text-white text-7xl mb-10 underline-offset-8 decoration-8">Projects</h2>
-        <projects/>
+        <projects :displayCorrectly="displayWorksCorrectly" data-type="projects"/>
     </section>
 
-    <!--Make git like timeline  -->
     <section class="bg-gray-800 h-screen px-5">
         <h2 class="flex justify-center text-white text-7xl mb-10 underline-offset-8 decoration-8">Software/IT Jobs</h2>
-        <jobs/>
+        <jobs :displayCorrectly="displayWorksCorrectly" data-type="jobs"/>
     </section>
 </template>
 
@@ -21,6 +20,40 @@ export default {
     name: "index",
     data() {
         return {
+            tags: [
+                {
+                    name: "Nuxt.js",
+                    color: "#00c58e"
+                },
+                {
+                    name: "TailwindCSS",
+                    color: "#38b2ac"
+                },
+                {
+                    name: "Larvel",
+                    color: "#f56565"
+                },
+                {
+                    name: "Node.js",
+                    color: "#68d391"
+                },
+                {
+                    name: "MongoDB",
+                    color: "#067843"
+                },
+                {
+                    name: "JavaScript",
+                    color: "#f6e05e"
+                },
+                {
+                    name: "Java",
+                    color: "#d66d0f"
+                },
+                {
+                    name: "Greenfoot",
+                    color: "#93c75e"
+                },
+            ],
             inMove: false,
             inMoveDelay: 400,
             activeSection: 0,
@@ -28,9 +61,42 @@ export default {
             touchStartY: 0
         }
     },
-
-    // scroll from https://codepen.io/WebDEasy/pen/NVOEBL
     methods: {
+        displayWorksCorrectly(works, sort = false) {
+            // loop through the jobs and add the tags to the jobs
+            works.forEach(job => {
+                job.tags = this.matchProjectAndTags(job);
+            })
+            // sort the jobs
+            if(sort) this.sortJobs(works);
+
+            return works;
+        },
+        matchProjectAndTags(projectUpper) {
+            // check if the tag of the project is in the tags array, if so add it to another array and return that array
+            let matchedTags = [];
+            if (projectUpper.tags === undefined) return matchedTags;
+            projectUpper.tags.forEach(tag => {
+                this.tags.forEach(tag2 => {
+                    if (tag === tag2.name) {
+                        matchedTags.push(tag2)
+                    }
+                })
+            })
+            return matchedTags;
+        },
+        sortJobs(works) {
+            // sort the jobs by from and to date (if to date is null, it's still working there)
+            works.sort((a, b) => {
+                if (a.to === null) return -1;
+                if (b.to === null) return 1;
+                return new Date(b.to) - new Date(a.to);
+            })
+
+        },
+
+
+        // scroll from https://codepen.io/WebDEasy/pen/NVOEBL
         /**
          * Calcaulates the absolute offsets of each section on the page and pushs it into the offsets array
          */

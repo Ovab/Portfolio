@@ -1,5 +1,6 @@
 <template>
-    <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-3 gap-2 text-white">
+    <!--TODO: build horizontal paigation for mobile    -->
+    <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-3 gap-2 text-white max-h-[80vh] overflow-x-auto">
         <template v-for="project in jobs">
             <WorksItem :work="project"/>
         </template>

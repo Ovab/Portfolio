@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div class="flex flex-col w-full px-2 rounded"
+    <div class="flex flex-col w-full px-2 rounded"
              :style="{'background-color': work.bgColor}">
             <div class="flex flex-col flex-1">
                 <div class="flex justify-center">
@@ -35,7 +34,6 @@
                     </span>
             </div>
         </div>
-    </div>
 </template>
 
 <script>

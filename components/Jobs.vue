@@ -1,7 +1,10 @@
 <template>
-    <div class="text-white text-3xl">
-        Fancy git timeline or something is supposed to go here if I decide to work on this again
-        <div class="grid grid-cols-auto grid-rows-2 gap-2 text-white" v-for="job in jobs">
+    <div class="text-white text-3xl grid grid-cols-1 gap-2"
+         :class="{'grid-cols-2':jobs.length === 2,
+                    'grid-cols-3':jobs.length>= 3
+        }">
+        <div class="text-white" v-for="job in jobs">
+            {{resolveDate(job.from)}} to {{resolveDate(job.to)}}
             <WorksItem :work="job"/>
         </div>
     </div>
@@ -33,8 +36,8 @@ export default {
                     github: null,
                     website: 'https://jaspersmedia.com/',
                     bgColor: "#353c4c",
-                    from: "2020-01-01",
-                    to: "2021-09-01"
+                    from: "2021-11-21",
+                    to: null
                 }
             ],
         }
@@ -44,6 +47,16 @@ export default {
             return this.displayCorrectly(this.jobs, true);
         },
     },
+    methods: {
+        // resolve date to words
+        resolveDate(date) {
+            if (date === null) {
+                return "Present";
+            }
+            const d = new Date(date);
+            return d.toLocaleString('default', {month: 'long'}) + " " + d.getFullYear();
+        }
+    }
 }
 </script>
 
